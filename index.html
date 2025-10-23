@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Wiki Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>Enhanced Wiki Game</h1>
+        <p>Navigate from one Wikipedia article to another in the fewest clicks possible.</p>
+    </header>
+
+    <main class="game-container">
+        <section class="info-panel">
+            <div class="panel start-panel">
+                <h2>Start Article</h2>
+                <p id="start-article-title">Click "New Game" to begin!</p>
+                <a id="start-article-link" href="#" target="_blank">View on Wikipedia</a>
+            </div>
+            <div class="panel target-panel">
+                <h2>Target Article</h2>
+                <p id="target-article-title">...</p>
+            </div>
+        </section>
+
+        <section class="stats-panel">
+            <div class="stat">
+                <i>⏱️</i>
+                <span id="timer">00:00</span>
+            </div>
+            <div class="stat">
+                <i>🔗</i>
+                <span id="clicks">0</span> Clicks
+            </div>
+        </section>
+
+        <section class="gameplay-area">
+            <div id="path-display">
+                <h3>Your Path:</h3>
+                <ol id="path-list"></ol>
+            </div>
+            
+            <div id="move-input-area">
+                <form id="move-form">
+                    <label for="next-url">Enter the URL of the next Wikipedia article you visit:</label>
+                    <input type="url" id="next-url" placeholder="https://en.wikipedia.org/wiki/..." required disabled>
+                    <button type="submit" id="submit-move-btn" disabled>Submit Move</button>
+                </form>
+            </div>
+        </section>
+
+        <div id="victory-message" class="hidden">
+            <h2>🎉 Victory! 🎉</h2>
+            <p>You reached the target in <span id="final-clicks"></span> clicks and <span id="final-time"></span>!</p>
+            <button id="play-again-btn">Play Again</button>
+        </div>
+    </main>
+
+    <footer>
+        <button id="new-game-btn">New Game</button>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
