@@ -20,12 +20,16 @@
         <section class="info-panel">
             <div class="panel start-panel">
                 <h2>Start Article</h2>
-                <p id="start-article-title">Click "New Game" to begin!</p>
+                <p id="start-article-title">Click "Start Game" to begin!</p>
                 <a id="start-article-link" href="#" target="_blank">View on Wikipedia</a>
             </div>
             <div class="panel target-panel">
                 <h2>Target Article</h2>
                 <p id="target-article-title">...</p>
+            </div>
+            <div class="panel high-score-panel">
+                <h2>High Score</h2>
+                <p id="high-score">0</p>
             </div>
         </section>
 
@@ -37,6 +41,10 @@
             <div class="stat">
                 <i>🔗</i>
                 <span id="clicks">0</span> Clicks
+            </div>
+            <div class="stat score-display">
+                <i>⭐</i>
+                <span id="score">0</span>
             </div>
         </section>
 
@@ -58,12 +66,14 @@
         <div id="victory-message" class="hidden">
             <h2>🎉 Victory! 🎉</h2>
             <p>You reached the target in <span id="final-clicks"></span> clicks and <span id="final-time"></span>!</p>
+            <p>Your Score: <strong id="final-score"></strong></p>
             <button id="play-again-btn">Play Again</button>
         </div>
     </main>
 
     <footer>
-        <button id="new-game-btn">New Game</button>
+        <!-- This button will change its function: Start, Pause, Resume -->
+        <button id="game-control-btn">Start Game</button>
     </footer>
 
     <script src="script.js"></script>
