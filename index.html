@@ -7,72 +7,75 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
-        <h1>Enhanced Wiki Game</h1>
-        <p>Navigate from one Wikipedia article to another in the fewest clicks possible.</p>
+        <h1>Wiki Game</h1>
+        <p>Navigate from one article to another in the fewest clicks.</p>
     </header>
 
     <main class="game-container">
-        <section class="info-panel">
-            <div class="panel start-panel">
-                <h2>Start Article</h2>
-                <p id="start-article-title">Click "Start Game" to begin!</p>
-                <a id="start-article-link" href="#" target="_blank">View on Wikipedia</a>
-            </div>
-            <div class="panel target-panel">
-                <h2>Target Article</h2>
-                <p id="target-article-title">...</p>
-            </div>
-            <div class="panel high-score-panel">
-                <h2>High Score</h2>
-                <p id="high-score">0</p>
-            </div>
-        </section>
+        <div class="game-board">
+            <section class="info-panel">
+                <div class="panel start-panel">
+                    <h2>Start</h2>
+                    <p id="start-article-title">Click "Start Game" to begin!</p>
+                    <a id="start-article-link" href="#" target="_blank">View on Wikipedia</a>
+                </div>
+                <div class="panel target-panel">
+                    <h2>Target</h2>
+                    <p id="target-article-title">...</p>
+                </div>
+                <div class="panel high-score-panel">
+                    <h2>High Score</h2>
+                    <p id="high-score">0</p>
+                </div>
+            </section>
 
-        <section class="stats-panel">
-            <div class="stat">
-                <i>⏱️</i>
-                <span id="timer">00:00</span>
-            </div>
-            <div class="stat">
-                <i>🔗</i>
-                <span id="clicks">0</span> Clicks
-            </div>
-            <div class="stat score-display">
-                <i>⭐</i>
-                <span id="score">0</span>
-            </div>
-        </section>
+            <section class="stats-bar">
+                <div class="stat">
+                    <span class="stat-label">Time</span>
+                    <span id="timer" class="stat-value">00:00</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Clicks</span>
+                    <span id="clicks" class="stat-value">0</span>
+                </div>
+                <div class="stat score-display">
+                    <span class="stat-label">Score</span>
+                    <span id="score" class="stat-value">0</span>
+                </div>
+            </section>
 
-        <section class="gameplay-area">
-            <div id="path-display">
-                <h3>Your Path:</h3>
-                <ol id="path-list"></ol>
-            </div>
-            
-            <div id="move-input-area">
-                <form id="move-form">
-                    <label for="next-url">Enter the URL of the next Wikipedia article you visit:</label>
-                    <input type="url" id="next-url" placeholder="https://en.wikipedia.org/wiki/..." required disabled>
-                    <button type="submit" id="submit-move-btn" disabled>Submit Move</button>
-                </form>
-            </div>
-        </section>
-
-        <div id="victory-message" class="hidden">
-            <h2>🎉 Victory! 🎉</h2>
-            <p>You reached the target in <span id="final-clicks"></span> clicks and <span id="final-time"></span>!</p>
-            <p>Your Score: <strong id="final-score"></strong></p>
-            <button id="play-again-btn">Play Again</button>
+            <section class="gameplay-area">
+                <div id="path-display">
+                    <h3>Your Path</h3>
+                    <ol id="path-list"></ol>
+                </div>
+                
+                <div id="move-input-area">
+                    <form id="move-form">
+                        <input type="url" id="next-url" placeholder="Paste Wikipedia URL here..." required disabled>
+                        <button type="submit" id="submit-move-btn" disabled>Submit Move</button>
+                    </form>
+                </div>
+            </section>
         </div>
     </main>
 
+    <div id="victory-message" class="hidden">
+        <div class="victory-content">
+            <h2>🎉 Victory! 🎉</h2>
+            <p>You reached the target in <span id="final-clicks"></span> clicks and <span id="final-time"></span>!</p>
+            <p class="final-score-label">Your Score</p>
+            <p id="final-score" class="final-score-value">0</p>
+            <button id="play-again-btn">Play Again</button>
+        </div>
+    </div>
+
     <footer>
-        <!-- This button will change its function: Start, Pause, Resume -->
         <button id="game-control-btn">Start Game</button>
     </footer>
 
